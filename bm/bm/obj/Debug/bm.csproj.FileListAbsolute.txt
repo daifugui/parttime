@@ -1,0 +1,10 @@
+D:\vs2017\bm\bm\bin\Debug\bm.exe.config
+D:\vs2017\bm\bm\bin\Debug\bm.exe
+D:\vs2017\bm\bm\bin\Debug\bm.pdb
+D:\vs2017\bm\bm\obj\Debug\bm.csprojAssemblyReference.cache
+D:\vs2017\bm\bm\obj\Debug\bm.Form1.resources
+D:\vs2017\bm\bm\obj\Debug\bm.Properties.Resources.resources
+D:\vs2017\bm\bm\obj\Debug\bm.csproj.GenerateResource.cache
+D:\vs2017\bm\bm\obj\Debug\bm.csproj.CoreCompileInputs.cache
+D:\vs2017\bm\bm\obj\Debug\bm.exe
+D:\vs2017\bm\bm\obj\Debug\bm.pdb
