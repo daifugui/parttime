@@ -236,9 +236,51 @@ namespace bm
             this.comboBox2.Items.Add("D3");
             this.comboBox2.Items.Add("H1");
             this.comboBox2.Items.Add("H2");
+            this.comboBox1.SelectedIndex = 0;
+            this.comboBox2.SelectedIndex = 0;
+
+            Random rd = new Random();
+            for (int i = 0; i < 30; i++)
+            {
+                int index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                this.dataGridView1.Rows[index].Cells[1].Value = "D1";                
+                this.dataGridView1.Rows[index].Cells[2].Value =(rd.Next()%10).ToString();
+
+                index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                this.dataGridView1.Rows[index].Cells[1].Value = "D2";
+                this.dataGridView1.Rows[index].Cells[2].Value = (rd.Next() % 10).ToString();
+                index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                this.dataGridView1.Rows[index].Cells[1].Value = "D3";
+                this.dataGridView1.Rows[index].Cells[2].Value = (rd.Next() % 10).ToString();
+
+                index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                this.dataGridView1.Rows[index].Cells[1].Value = "H1";
+                this.dataGridView1.Rows[index].Cells[2].Value = (rd.Next() % 10).ToString();
+                index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                this.dataGridView1.Rows[index].Cells[1].Value = "H2";
+                this.dataGridView1.Rows[index].Cells[2].Value = (rd.Next() % 10).ToString();
+            }
+
+
+
+        }
+        Form2 form2 = new Form2();
+        private void ConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.form2.ShowDialog(this);
         }
 
-        private void ConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PrintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
