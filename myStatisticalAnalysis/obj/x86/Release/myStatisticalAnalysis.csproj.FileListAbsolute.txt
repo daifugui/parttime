@@ -96,3 +96,14 @@ E:\VS2010\mycode\123456\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnaly
 E:\VS2010\mycode\123456\myStatisticalAnalysis\obj\x86\Release\SPC.TrustInfo.xml
 E:\VS2010\mycode\123456\myStatisticalAnalysis\obj\x86\Release\SPC.exe.manifest
 E:\VS2010\mycode\123456\myStatisticalAnalysis\obj\x86\Release\SPC.application
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.csprojAssemblyReference.cache
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.Form1.resources
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.Form2.resources
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.copyright.resources
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.Login.resources
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.Properties.Resources.resources
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.csproj.GenerateResource.cache
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\myStatisticalAnalysis.csproj.CoreCompileInputs.cache
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\SPC.TrustInfo.xml
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\SPC.exe
+D:\parttime\myStatisticalAnalysis\obj\x86\Release\SPC.pdb

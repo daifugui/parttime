@@ -24,7 +24,7 @@ namespace bm
             //Graphics g = pictureBox1.CreateGraphics();
             // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
             // g.DrawLine(new Pen(Color.Blue, 2), (float)0.1, (float)0.1, (float)0.5, (float)0.5);
-            draw_dis_line(40, 170, 250, 170);
+            draw_dis_line(102, 32, 290, 120);
 
         }
 
@@ -220,6 +220,29 @@ namespace bm
 
         }
 
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (this.comboBox1.SelectedIndex == 0)
+
+                drawchart1(this.comboBox1.SelectedIndex);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.comboBox1.Items.Add("X_bar");
+            this.comboBox1.Items.Add("R");
+            this.comboBox2.Items.Add("D1");
+            this.comboBox2.Items.Add("D2");
+            this.comboBox2.Items.Add("D3");
+            this.comboBox2.Items.Add("H1");
+            this.comboBox2.Items.Add("H2");
+        }
+
+        private void ConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public bool computeCpkC4(double USL, double LSL, double Ave_mean, double Ave_STD, int subgroupsize, ref double sigma, ref double Cp, ref double Cpu, ref double Cpl, ref double Cpk)
         {
             sigma = Ave_STD * SPC_1_C4[subgroupsize - 2];
@@ -232,11 +255,121 @@ namespace bm
         }
 
 
-        private void drawchart1()
+        private void drawchart1(int charttype=0)
         {
+         
+            //this.comboBox1.Items.Add("R");
 
-            //x_bar
+
+            int subgroupsize = 3;
+            double Ave_R=0;
+            double Ave_mean = 0;
+            double UCL = 0;
+            double LCL = 0;
+            double UCLR = 0;
+            double LCLR = 0;
+
+            double[] dmean = { 1, 4, 3, 6, 5, 2, 1, 4, 8, 4 };
+            double[] dR = { 2, 3, 1, 5, 5, 3, 1, 4, 2, 4 };
+            this.computeLimit(dR, dmean, subgroupsize, ref Ave_R, ref Ave_mean, ref UCL, ref LCL, ref UCLR, ref LCLR);
+           
             this.chart1.Series.Clear();
+            if (charttype == 0)
+            {
+                Series S_d = new Series("data");
+                S_d.ChartType = SeriesChartType.Line;
+                S_d.Color = Color.Blue;
+                S_d.BorderWidth = 2;
+
+                for (int i=0;i<dmean.Length;i++)
+                    S_d.Points.AddXY(i+1, dmean[i]);
+                this.chart1.Series.Add(S_d);
+               
+
+
+
+
+                Series S_USL= new Series("USL");
+                S_USL.ChartType = SeriesChartType.Line;
+                S_USL.Color = Color.Red;
+                S_USL.Points.AddXY(1, 15);
+                S_USL.Points.AddXY(11, 15);
+                S_USL.BorderWidth = 3;
+                this.chart1.Series.Add(S_USL);
+
+                Series S_LSL = new Series("LSL");
+                S_LSL.ChartType = SeriesChartType.Line;
+                S_LSL.Color = Color.Red;
+                S_LSL.Points.AddXY(1, -5);
+                S_LSL.Points.AddXY(11, -5);
+                S_LSL.BorderWidth = 3;
+                this.chart1.Series.Add(S_LSL);
+
+
+                Series S_bar = new Series("X-bar");
+                S_bar.ChartType = SeriesChartType.Line;
+                S_bar.Color = Color.Green;
+                S_bar.Points.AddXY(1, Ave_mean);
+                S_bar.Points.AddXY(11, Ave_mean);
+                S_bar.BorderWidth = 3;
+                this.chart1.Series.Add(S_bar);
+
+                Series S_UCL = new Series("UCL");
+                S_UCL.ChartType = SeriesChartType.Line;
+                S_UCL.Color = Color.Yellow;
+                S_UCL.Points.AddXY(1, UCL);
+                S_UCL.Points.AddXY(11, UCL);
+                S_UCL.BorderWidth = 3;
+                this.chart1.Series.Add(S_UCL);
+
+                Series S_LCL = new Series("LCL");
+                S_LCL.ChartType = SeriesChartType.Line;
+                S_LCL.Color = Color.Yellow;
+                S_LCL.Points.AddXY(1, LCL);
+                S_LCL.Points.AddXY(11, LCL);
+                S_LCL.BorderWidth = 3;
+                this.chart1.Series.Add(S_LCL);
+
+            }
+            else if (charttype == 1)
+            {
+                Series S_d = new Series("data");
+                S_d.ChartType = SeriesChartType.Line;
+                S_d.Color = Color.Blue;
+                S_d.BorderWidth = 2;
+
+                for (int i = 0; i < dR.Length; i++)
+                    S_d.Points.AddXY(i + 1, dR[i]);
+                this.chart1.Series.Add(S_d);
+
+
+                Series s_aveR = new Series("aveR");
+                s_aveR.ChartType = SeriesChartType.Line;
+                s_aveR.Color = Color.Green;
+                s_aveR.Points.AddXY(1, Ave_R);
+                s_aveR.Points.AddXY(11, Ave_R);
+                s_aveR.BorderWidth = 3;
+                this.chart1.Series.Add(s_aveR);
+
+                Series S_UCLR = new Series("UCLR");
+                S_UCLR.ChartType = SeriesChartType.Line;
+                S_UCLR.Color = Color.Yellow;
+                S_UCLR.Points.AddXY(1, UCLR);
+                S_UCLR.Points.AddXY(11, UCLR);
+                S_UCLR.BorderWidth = 3;
+                this.chart1.Series.Add(S_UCLR);
+
+                Series S_LCLR = new Series("LCLR");
+                S_LCLR.ChartType = SeriesChartType.Line;
+                S_LCLR.Color = Color.Yellow;
+                S_LCLR.Points.AddXY(1, LCLR);
+                S_LCLR.Points.AddXY(11, LCLR);
+                S_LCLR.BorderWidth = 3;
+                this.chart1.Series.Add(S_LCLR);
+
+
+
+            }
 
 
         }
@@ -281,7 +414,7 @@ namespace bm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            drawchart1();
+            drawchart1(1);
         }
     }
 }
