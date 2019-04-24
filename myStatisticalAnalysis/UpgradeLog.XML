@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="myStatisticalAnalysis5">
+</Property><Property Name="Solution File" Value="E:\mycode\myStatisticalAnalysis\myStatisticalAnalysis5.sln">
+</Property><Property Name="Date" Value="Saturday, September 26, 2015">
+</Property><Property Name="Time" Value="15:12 PM">
+</Property></Properties><Event ErrorLevel="0" Project="myStatisticalAnalysis" Source="myStatisticalAnalysis.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="myStatisticalAnalysis" Source="myStatisticalAnalysis.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="myStatisticalAnalysis5.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="myStatisticalAnalysis5.sln" Description="Converted">
+</Event></UpgradeLog>
