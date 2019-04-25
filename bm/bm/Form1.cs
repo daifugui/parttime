@@ -231,11 +231,12 @@ namespace bm
         {
             this.comboBox1.Items.Add("X_bar");
             this.comboBox1.Items.Add("R");
-            this.comboBox2.Items.Add("D1");
-            this.comboBox2.Items.Add("D2");
-            this.comboBox2.Items.Add("D3");
-            this.comboBox2.Items.Add("H1");
-            this.comboBox2.Items.Add("H2");
+            this.comboBox2.Items.Add("直径1");
+            this.comboBox2.Items.Add("直径2");
+            this.comboBox2.Items.Add("直径3");
+            this.comboBox2.Items.Add("圆度3");
+            this.comboBox2.Items.Add("高度1");
+            this.comboBox2.Items.Add("高度2");
             this.comboBox1.SelectedIndex = 0;
             this.comboBox2.SelectedIndex = 0;
 
@@ -265,6 +266,29 @@ namespace bm
                 this.dataGridView1.Rows[index].Cells[1].Value = "H2";
                 this.dataGridView1.Rows[index].Cells[2].Value = (rd.Next() % 10).ToString();
             }
+        
+            for (int i = 0; i < 30; i++)
+            {
+                int index = this.dataGridView2.Rows.Add();
+                //this.dataGridView2.Rows[index].Cells[0].Value = DateTime.Now.ToString(); ;
+                //this.dataGridView2.Rows[index].Cells[10].Value = "D1";
+                double d0 = (9+rd.Next() % 10);
+                double d1 = (9+rd.Next() % 10);
+                double d2 = (9+rd.Next() % 10);
+                this.dataGridView2.Rows[index].Cells[0].Value = d0.ToString();
+                this.dataGridView2.Rows[index].Cells[1].Value = d1.ToString();
+                this.dataGridView2.Rows[index].Cells[2].Value = d2.ToString();
+
+                this.dataGridView2.Rows[index].Cells[3].Value = ((Math.Max(Math.Max(d0,d1),d2)- Math.Min(Math.Min(d0, d1), d2))/2).ToString();
+                
+                this.dataGridView2.Rows[index].Cells[4].Value = (5+rd.Next() % 10).ToString();
+                this.dataGridView2.Rows[index].Cells[5].Value = (5+rd.Next() % 10).ToString();
+                this.dataGridView2.Rows[index].Cells[6].Value = DateTime.Now.ToString(); ;
+                dataGridView2.Rows[index].HeaderCell.Value = (i + 1).ToString();
+            }
+            this.dataGridView2.Rows[1].Cells[3].Style.BackColor = Color.Red;
+
+            this.dataGridView2.Rows[3].Cells[4].Style.BackColor = Color.Red;
 
 
 
@@ -282,7 +306,7 @@ namespace bm
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("SPC帮助.pdf");
         }
 
         public bool computeCpkC4(double USL, double LSL, double Ave_mean, double Ave_STD, int subgroupsize, ref double sigma, ref double Cp, ref double Cpu, ref double Cpl, ref double Cpk)
@@ -299,9 +323,9 @@ namespace bm
 
         private void drawchart1(int charttype=0)
         {
-         
-            //this.comboBox1.Items.Add("R");
 
+            //this.comboBox1.Items.Add("R");
+            //sigma = 0, Cp = 0, Cpu = 0, Cpl = 0, Cpk =
 
             int subgroupsize = 3;
             double Ave_R=0;
@@ -311,10 +335,26 @@ namespace bm
             double UCLR = 0;
             double LCLR = 0;
 
-            double[] dmean = { 1, 4, 3, 6, 5, 2, 1, 4, 8, 4 };
-            double[] dR = { 2, 3, 1, 5, 5, 3, 1, 4, 2, 4 };
+           // double[] dmean = { 1, 4, 3, 6, 5, 2, 1, 4, 8, 4 };
+           // double[] dR = { 2, 3, 1, 5, 5, 3, 1, 4, 2, 4 };
+
+             double[] dmean=new double[10];
+             double[] dR=new double[10];
+            Random rd = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                dmean[i] = 10+rd.Next()%10;
+                dR[i] = 5+rd.Next() % 10;
+            }
             this.computeLimit(dR, dmean, subgroupsize, ref Ave_R, ref Ave_mean, ref UCL, ref LCL, ref UCLR, ref LCLR);
-           
+
+            computeCpk(25, 3, Ave_mean, Ave_R, 3, ref sigma, ref Cp, ref Cpu, ref Cpl, ref Cpk);
+            this.textBox4.Text = sigma.ToString();
+            this.textBox5.Text = UCL.ToString();
+            this.textBox6.Text = LCL.ToString();
+            this.textBox7.Text = Cp.ToString();
+            this.textBox8.Text = Cpk.ToString();
+
             this.chart1.Series.Clear();
             //this.chart1.ChartAreas[0].AxisX.LineDashStyle = ChartDashStyle.Dash;
             //this.chart1.ChartAreas[0].AxisY.LineDashStyle = ChartDashStyle.Dash;
@@ -360,8 +400,8 @@ namespace bm
                 Series S_USL= new Series("USL");
                 S_USL.ChartType = SeriesChartType.Line;
                 S_USL.Color = Color.Red;
-                S_USL.Points.AddXY(1, 15);
-                S_USL.Points.AddXY(11, 15);
+                S_USL.Points.AddXY(1, 30);
+                S_USL.Points.AddXY(11, 30);
                 S_USL.BorderWidth = 3;
                 S_USL.BorderDashStyle = ChartDashStyle.Dash;//设置图像边框线的样式(实线、虚线、点线)
                 this.chart1.Series.Add(S_USL);
@@ -369,8 +409,8 @@ namespace bm
                 Series S_LSL = new Series("LSL");
                 S_LSL.ChartType = SeriesChartType.Line;
                 S_LSL.Color = Color.Red;
-                S_LSL.Points.AddXY(1, -5);
-                S_LSL.Points.AddXY(11, -5);
+                S_LSL.Points.AddXY(1, 1);
+                S_LSL.Points.AddXY(11, 1);
                 S_LSL.BorderWidth = 3;
                 S_LSL.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_LSL);

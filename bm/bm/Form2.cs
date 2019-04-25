@@ -20,7 +20,7 @@ namespace bm
         private void Form2_Load(object sender, EventArgs e)
         {
             int index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = "D1";
+            this.dataGridView1.Rows[index].Cells[0].Value = "直径1";
             this.dataGridView1.Rows[index].Cells[1].Value = "3";
             this.dataGridView1.Rows[index].Cells[2].Value = "15";
             this.dataGridView1.Rows[index].Cells[3].Value = "5";
@@ -28,23 +28,30 @@ namespace bm
 
 
             index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = "D2";
+            this.dataGridView1.Rows[index].Cells[0].Value = "直径2";
             this.dataGridView1.Rows[index].Cells[1].Value = "3";
             this.dataGridView1.Rows[index].Cells[2].Value = "15";
             this.dataGridView1.Rows[index].Cells[3].Value = "5";
             index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = "D3";
+            this.dataGridView1.Rows[index].Cells[0].Value = "直径3";
             this.dataGridView1.Rows[index].Cells[1].Value = "3";
             this.dataGridView1.Rows[index].Cells[2].Value = "15";
             this.dataGridView1.Rows[index].Cells[3].Value = "5";
 
             index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = "H1";
+            this.dataGridView1.Rows[index].Cells[0].Value = "圆度";
+            this.dataGridView1.Rows[index].Cells[1].Value = "3";
+            this.dataGridView1.Rows[index].Cells[2].Value = "0.03";
+            this.dataGridView1.Rows[index].Cells[3].Value = "0";
+
+
+            index = this.dataGridView1.Rows.Add();
+            this.dataGridView1.Rows[index].Cells[0].Value = "高度1";
             this.dataGridView1.Rows[index].Cells[1].Value = "3";
             this.dataGridView1.Rows[index].Cells[2].Value = "15";
             this.dataGridView1.Rows[index].Cells[3].Value = "10";
             index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = "H2";
+            this.dataGridView1.Rows[index].Cells[0].Value = "高度2";
             this.dataGridView1.Rows[index].Cells[1].Value = "3";
             this.dataGridView1.Rows[index].Cells[2].Value = "15";
             this.dataGridView1.Rows[index].Cells[3].Value = "10";
