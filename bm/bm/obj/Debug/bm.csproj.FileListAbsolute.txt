@@ -19,3 +19,14 @@ D:\parttime\bm\bm\obj\Debug\bm.exe
 D:\parttime\bm\bm\obj\Debug\bm.pdb
 D:\parttime\bm\bm\obj\Debug\bm.Form2.resources
 D:\parttime\bm\bm\obj\Debug\bm.csprojAssemblyReference.cache
+E:\parttime\bm\bm\bin\Debug\bm.exe.config
+E:\parttime\bm\bm\bin\Debug\bm.exe
+E:\parttime\bm\bm\bin\Debug\bm.pdb
+E:\parttime\bm\bm\obj\Debug\bm.csprojAssemblyReference.cache
+E:\parttime\bm\bm\obj\Debug\bm.Form1.resources
+E:\parttime\bm\bm\obj\Debug\bm.Form2.resources
+E:\parttime\bm\bm\obj\Debug\bm.Properties.Resources.resources
+E:\parttime\bm\bm\obj\Debug\bm.csproj.GenerateResource.cache
+E:\parttime\bm\bm\obj\Debug\bm.csproj.CoreCompileInputs.cache
+E:\parttime\bm\bm\obj\Debug\bm.exe
+E:\parttime\bm\bm\obj\Debug\bm.pdb

@@ -316,6 +316,26 @@ namespace bm
             this.computeLimit(dR, dmean, subgroupsize, ref Ave_R, ref Ave_mean, ref UCL, ref LCL, ref UCLR, ref LCLR);
            
             this.chart1.Series.Clear();
+            //this.chart1.ChartAreas[0].AxisX.LineDashStyle = ChartDashStyle.Dash;
+            //this.chart1.ChartAreas[0].AxisY.LineDashStyle = ChartDashStyle.Dash;
+            //this.chart1.ChartAreas[0].BorderDashStyle= ChartDashStyle.Dash;
+         //   chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+          //  chart1.ChartAreas[0].AxisX.MinorGrid.LineWidth = 1;
+          //  chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 1;
+          //  chart1.ChartAreas[0].AxisY.MinorGrid.LineWidth = 1;
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkGray;
+
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.DarkGray;
+
+            //chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            // chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            //chart1.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            // chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+
+            // this.chart1.ChartAreas[0].Axes.
+
             if (charttype == 0)
             {
                 Series S_d = new Series("data");
@@ -325,6 +345,12 @@ namespace bm
 
                 for (int i=0;i<dmean.Length;i++)
                     S_d.Points.AddXY(i+1, dmean[i]);
+
+                S_d.MarkerColor = Color.Red;
+               // S_d.MarkerBorderColor = Color.Yellow;
+                S_d.MarkerBorderWidth = 2;
+                S_d.MarkerStyle = MarkerStyle.Circle; 
+           
                 this.chart1.Series.Add(S_d);
                
 
@@ -337,6 +363,7 @@ namespace bm
                 S_USL.Points.AddXY(1, 15);
                 S_USL.Points.AddXY(11, 15);
                 S_USL.BorderWidth = 3;
+                S_USL.BorderDashStyle = ChartDashStyle.Dash;//设置图像边框线的样式(实线、虚线、点线)
                 this.chart1.Series.Add(S_USL);
 
                 Series S_LSL = new Series("LSL");
@@ -345,6 +372,7 @@ namespace bm
                 S_LSL.Points.AddXY(1, -5);
                 S_LSL.Points.AddXY(11, -5);
                 S_LSL.BorderWidth = 3;
+                S_LSL.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_LSL);
 
 
@@ -354,6 +382,7 @@ namespace bm
                 S_bar.Points.AddXY(1, Ave_mean);
                 S_bar.Points.AddXY(11, Ave_mean);
                 S_bar.BorderWidth = 3;
+                S_bar.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_bar);
 
                 Series S_UCL = new Series("UCL");
@@ -362,6 +391,8 @@ namespace bm
                 S_UCL.Points.AddXY(1, UCL);
                 S_UCL.Points.AddXY(11, UCL);
                 S_UCL.BorderWidth = 3;
+                S_UCL.BorderDashStyle = ChartDashStyle.Dash;
+
                 this.chart1.Series.Add(S_UCL);
 
                 Series S_LCL = new Series("LCL");
@@ -370,6 +401,7 @@ namespace bm
                 S_LCL.Points.AddXY(1, LCL);
                 S_LCL.Points.AddXY(11, LCL);
                 S_LCL.BorderWidth = 3;
+                S_LCL.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_LCL);
 
             }
@@ -382,6 +414,11 @@ namespace bm
 
                 for (int i = 0; i < dR.Length; i++)
                     S_d.Points.AddXY(i + 1, dR[i]);
+
+                S_d.MarkerColor = Color.Red;
+                // S_d.MarkerBorderColor = Color.Yellow;
+                S_d.MarkerBorderWidth = 2;
+                S_d.MarkerStyle = MarkerStyle.Circle;
                 this.chart1.Series.Add(S_d);
 
 
@@ -391,6 +428,7 @@ namespace bm
                 s_aveR.Points.AddXY(1, Ave_R);
                 s_aveR.Points.AddXY(11, Ave_R);
                 s_aveR.BorderWidth = 3;
+                s_aveR.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(s_aveR);
 
                 Series S_UCLR = new Series("UCLR");
@@ -399,6 +437,7 @@ namespace bm
                 S_UCLR.Points.AddXY(1, UCLR);
                 S_UCLR.Points.AddXY(11, UCLR);
                 S_UCLR.BorderWidth = 3;
+                S_UCLR.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_UCLR);
 
                 Series S_LCLR = new Series("LCLR");
@@ -407,6 +446,7 @@ namespace bm
                 S_LCLR.Points.AddXY(1, LCLR);
                 S_LCLR.Points.AddXY(11, LCLR);
                 S_LCLR.BorderWidth = 3;
+                S_LCLR.BorderDashStyle = ChartDashStyle.Dash;
                 this.chart1.Series.Add(S_LCLR);
 
 
