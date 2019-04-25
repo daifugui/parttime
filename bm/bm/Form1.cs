@@ -31,6 +31,7 @@ namespace bm
         private void draw_dis_line(int x1, int y1, int x2, int y2)
         {
             Graphics g = pictureBox1.CreateGraphics();
+            g.DrawString("直径1", new Font("Microsoft Sans Serif", 20), new SolidBrush(Color.Red), x1, y1);
             g.DrawLine(new Pen(Color.Blue, 2), x1, y1, x2, y2);
             double d = 5;
             if (y2 - y1 != 0)
@@ -286,6 +287,9 @@ namespace bm
                 this.dataGridView2.Rows[index].Cells[6].Value = DateTime.Now.ToString(); ;
                 dataGridView2.Rows[index].HeaderCell.Value = (i + 1).ToString();
             }
+           // dataGridView2.RowHeadersWidthSizeMode =;
+
+            dataGridView2.RowHeadersWidth = 50;
             this.dataGridView2.Rows[1].Cells[3].Style.BackColor = Color.Red;
 
             this.dataGridView2.Rows[3].Cells[4].Style.BackColor = Color.Red;
