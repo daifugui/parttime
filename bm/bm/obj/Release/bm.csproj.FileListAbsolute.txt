@@ -1,0 +1,9 @@
+G:\workspace\parttime\bm\bm\bin\Release\bm.exe.config
+G:\workspace\parttime\bm\bm\bin\Release\bm.exe
+G:\workspace\parttime\bm\bm\bin\Release\bm.pdb
+G:\workspace\parttime\bm\bm\obj\Release\bm.Form1.resources
+G:\workspace\parttime\bm\bm\obj\Release\bm.Form2.resources
+G:\workspace\parttime\bm\bm\obj\Release\bm.Properties.Resources.resources
+G:\workspace\parttime\bm\bm\obj\Release\bm.csproj.GenerateResource.Cache
+G:\workspace\parttime\bm\bm\obj\Release\bm.exe
+G:\workspace\parttime\bm\bm\obj\Release\bm.pdb

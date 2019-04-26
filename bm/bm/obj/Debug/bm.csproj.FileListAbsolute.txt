@@ -30,3 +30,13 @@ E:\parttime\bm\bm\obj\Debug\bm.csproj.GenerateResource.cache
 E:\parttime\bm\bm\obj\Debug\bm.csproj.CoreCompileInputs.cache
 E:\parttime\bm\bm\obj\Debug\bm.exe
 E:\parttime\bm\bm\obj\Debug\bm.pdb
+G:\workspace\parttime\bm\bm\bin\Debug\bm.exe.config
+G:\workspace\parttime\bm\bm\bin\Debug\bm.exe
+G:\workspace\parttime\bm\bm\bin\Debug\bm.pdb
+G:\workspace\parttime\bm\bm\obj\Debug\bm.csprojResolveAssemblyReference.cache
+G:\workspace\parttime\bm\bm\obj\Debug\bm.Form1.resources
+G:\workspace\parttime\bm\bm\obj\Debug\bm.Form2.resources
+G:\workspace\parttime\bm\bm\obj\Debug\bm.Properties.Resources.resources
+G:\workspace\parttime\bm\bm\obj\Debug\bm.csproj.GenerateResource.Cache
+G:\workspace\parttime\bm\bm\obj\Debug\bm.exe
+G:\workspace\parttime\bm\bm\obj\Debug\bm.pdb

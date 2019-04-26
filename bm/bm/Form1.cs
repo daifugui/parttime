@@ -24,16 +24,16 @@ namespace bm
             //Graphics g = pictureBox1.CreateGraphics();
             // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
             // g.DrawLine(new Pen(Color.Blue, 2), (float)0.1, (float)0.1, (float)0.5, (float)0.5);
-            draw_dis_line(102, 32, 290, 120);
+            draw_dis_line(122, 52, 400, 140);
 
         }
 
         private void draw_dis_line(int x1, int y1, int x2, int y2)
         {
             Graphics g = pictureBox1.CreateGraphics();
-            g.DrawString("直径1", new Font("Microsoft Sans Serif", 20), new SolidBrush(Color.Red), x1, y1);
-            g.DrawLine(new Pen(Color.Blue, 2), x1, y1, x2, y2);
-            double d = 5;
+            g.DrawString("直径1", new Font("Microsoft Sans Serif", 20), new SolidBrush(Color.Red), x1-80, y1-25);
+            g.DrawLine(new Pen(Color.Yellow, 3), x1, y1, x2, y2);
+            double d = 10;
             if (y2 - y1 != 0)
             {
                 double k = -(float)(x2 - x1) / (y2 - y1);
@@ -42,28 +42,29 @@ namespace bm
                 int y11 = (int)(y1 - k * dx);
                 int x12 = x1 + (int)dx;
                 int y12 = (int)(y1 + k * dx);
-                g.DrawLine(new Pen(Color.Blue, 2), x11, y11, x12, y12);
+                g.DrawLine(new Pen(Color.Yellow, 3), x11, y11, x12, y12);
 
                 int x21 = x2 - (int)dx;
                 int y21 = (int)(y2 - k * dx);
                 int x22 = x2 + (int)dx;
                 int y22 = (int)(y2 + k * dx);
-                g.DrawLine(new Pen(Color.Blue, 2), x21, y21, x22, y22);
+                g.DrawLine(new Pen(Color.Yellow, 3), x21, y21, x22, y22);
 
             }
             else
             {
-                g.DrawLine(new Pen(Color.Blue, 2), x1, (int)(y1 - d), x1, (int)(y1 + d));
-                g.DrawLine(new Pen(Color.Blue, 2), x2, (int)(y2 - d), x2, (int)(y2 + d));
+                g.DrawLine(new Pen(Color.Yellow, 3), x1, (int)(y1 - d), x1, (int)(y1 + d));
+                g.DrawLine(new Pen(Color.Yellow, 3), x2, (int)(y2 - d), x2, (int)(y2 + d));
             }
 
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-           // draw_dis_line(10, 20, 150, 170);
-           // Graphics g = pictureBox1.CreateGraphics();
-           // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
+            draw_dis_line(122, 52, 400, 140);
+            // draw_dis_line(10, 20, 150, 170);
+            // Graphics g = pictureBox1.CreateGraphics();
+            // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
 
         }
 
@@ -230,6 +231,8 @@ namespace bm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            
             this.comboBox1.Items.Add("X_bar");
             this.comboBox1.Items.Add("R");
             this.comboBox2.Items.Add("直径1");
@@ -310,7 +313,24 @@ namespace bm
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("SPC帮助.pdf");
+            System.Diagnostics.Process.Start("帮助.pdf");
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            // draw_dis_line(122, 52, 400, 140);
+           
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            draw_dis_line(122, 52, 400, 140);
         }
 
         public bool computeCpkC4(double USL, double LSL, double Ave_mean, double Ave_STD, int subgroupsize, ref double sigma, ref double Cp, ref double Cpu, ref double Cpl, ref double Cpk)
