@@ -26,7 +26,6 @@ namespace bm
             // g.DrawLine(new Pen(Color.Blue, 2), (float)0.1, (float)0.1, (float)0.5, (float)0.5);
             draw_dis_line(170, 60, 530, 210);
             this.pictureBox1.Invalidate();
-
         }
 
         private void draw_dis_line(int x1, int y1, int x2, int y2)
