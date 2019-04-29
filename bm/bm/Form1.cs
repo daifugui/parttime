@@ -58,7 +58,6 @@ namespace bm
                 g.DrawLine(new Pen(Color.Yellow, 3), x2, (int)(y2 - d), x2, (int)(y2 + d));
             }
 
-
             g.Dispose();
         }
 
