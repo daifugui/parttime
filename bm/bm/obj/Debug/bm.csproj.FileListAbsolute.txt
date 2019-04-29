@@ -40,3 +40,6 @@ G:\workspace\parttime\bm\bm\obj\Debug\bm.Properties.Resources.resources
 G:\workspace\parttime\bm\bm\obj\Debug\bm.csproj.GenerateResource.Cache
 G:\workspace\parttime\bm\bm\obj\Debug\bm.exe
 G:\workspace\parttime\bm\bm\obj\Debug\bm.pdb
+E:\parttime\bm\bm\bin\Debug\System.Windows.Forms.DataVisualization.Design.dll
+E:\parttime\bm\bm\bin\Debug\System.Windows.Forms.DataVisualization.dll
+E:\parttime\bm\bm\obj\Debug\bm.csproj.CopyComplete

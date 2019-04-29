@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+//using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -24,13 +24,15 @@ namespace bm
             //Graphics g = pictureBox1.CreateGraphics();
             // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
             // g.DrawLine(new Pen(Color.Blue, 2), (float)0.1, (float)0.1, (float)0.5, (float)0.5);
-            draw_dis_line(122, 52, 400, 140);
+            draw_dis_line(170, 60, 530, 210);
+            this.pictureBox1.Invalidate();
 
         }
 
         private void draw_dis_line(int x1, int y1, int x2, int y2)
         {
-            Graphics g = pictureBox1.CreateGraphics();
+            //Graphics g = pictureBox1.CreateGraphics();
+            Graphics g= Graphics.FromImage(pictureBox1.Image);
             g.DrawString("直径1", new Font("Microsoft Sans Serif", 20), new SolidBrush(Color.Red), x1-80, y1-25);
             g.DrawLine(new Pen(Color.Yellow, 3), x1, y1, x2, y2);
             double d = 10;
@@ -57,11 +59,13 @@ namespace bm
                 g.DrawLine(new Pen(Color.Yellow, 3), x2, (int)(y2 - d), x2, (int)(y2 + d));
             }
 
+
+            g.Dispose();
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            draw_dis_line(122, 52, 400, 140);
+           // draw_dis_line(122, 52, 400, 140);
             // draw_dis_line(10, 20, 150, 170);
             // Graphics g = pictureBox1.CreateGraphics();
             // g.DrawLine(new Pen(Color.Blue, 2), 10, 10, 50, 50);
@@ -296,7 +300,7 @@ namespace bm
             this.dataGridView2.Rows[1].Cells[3].Style.BackColor = Color.Red;
 
             this.dataGridView2.Rows[3].Cells[4].Style.BackColor = Color.Red;
-
+          //  draw_dis_line(122, 52, 400, 140);
 
 
         }
@@ -318,19 +322,19 @@ namespace bm
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-           
 
+          //  draw_dis_line(122, 52, 400, 140);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            // draw_dis_line(122, 52, 400, 140);
+           //  draw_dis_line(122, 52, 400, 140);
            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            draw_dis_line(122, 52, 400, 140);
+           // draw_dis_line(122, 52, 400, 140);
         }
 
         public bool computeCpkC4(double USL, double LSL, double Ave_mean, double Ave_STD, int subgroupsize, ref double sigma, ref double Cp, ref double Cpu, ref double Cpl, ref double Cpk)
@@ -541,7 +545,8 @@ namespace bm
             series.Points.AddXY(5, -5);
             series.Points.AddXY(6, 7);
             //series.Points.AddY()
-            int nn = series.Points.Count();
+            int nn = series.Points.Count;
+            //int nn = series.Points.Count();
             this.Text = nn.ToString();
             Series seriesH = new Series("LineH");
             seriesH.ChartType = SeriesChartType.Line;

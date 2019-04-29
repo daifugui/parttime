@@ -7,3 +7,14 @@ G:\workspace\parttime\bm\bm\obj\Release\bm.Properties.Resources.resources
 G:\workspace\parttime\bm\bm\obj\Release\bm.csproj.GenerateResource.Cache
 G:\workspace\parttime\bm\bm\obj\Release\bm.exe
 G:\workspace\parttime\bm\bm\obj\Release\bm.pdb
+E:\parttime\bm\bm\bin\Release\bm.exe.config
+E:\parttime\bm\bm\bin\Release\bm.exe
+E:\parttime\bm\bm\bin\Release\bm.pdb
+E:\parttime\bm\bm\obj\Release\bm.Form1.resources
+E:\parttime\bm\bm\obj\Release\bm.Form2.resources
+E:\parttime\bm\bm\obj\Release\bm.Properties.Resources.resources
+E:\parttime\bm\bm\obj\Release\bm.csproj.GenerateResource.cache
+E:\parttime\bm\bm\obj\Release\bm.csproj.CoreCompileInputs.cache
+E:\parttime\bm\bm\obj\Release\bm.exe
+E:\parttime\bm\bm\obj\Release\bm.pdb
+E:\parttime\bm\bm\obj\Release\bm.csprojAssemblyReference.cache
